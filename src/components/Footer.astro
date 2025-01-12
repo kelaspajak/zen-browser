@@ -1,17 +1,17 @@
 ---
-import Title from '../components/Title.astro'
-import Description from '../components/Description.astro'
+import { ArrowRight } from 'lucide-astro'
 import Button from '../components/Button.astro'
 import Circles from '../components/Circles.astro'
-import { ArrowRight } from 'lucide-astro'
+import Description from '../components/Description.astro'
+import Title from '../components/Title.astro'
 
-import { library, icon } from '@fortawesome/fontawesome-svg-core'
+import { icon, library } from '@fortawesome/fontawesome-svg-core'
 import {
-  faMastodon,
   faBluesky,
   faGithub,
-  faTwitter,
+  faMastodon,
   faReddit,
+  faTwitter,
 } from '@fortawesome/free-brands-svg-icons'
 
 library.add(faMastodon, faBluesky, faGithub, faTwitter, faReddit)
@@ -28,10 +28,11 @@ const Reddit = icon({ prefix: 'fab', iconName: 'reddit' })
 >
   <div class="flex w-full flex-col items-center justify-between lg:flex-row">
     <div>
-      <Title class="!text-paper">Zen Browser</Title>
+      <Title class="!text-paper">Less Summer</Title>
       <Description class="px-4 lg:w-2/5 lg:px-0">
-        Beautifully designed, privacy-focused, and packed with features. We care
-        about your experience, not your data.
+        Percayakan pengelolaan perpajakan perusahaan Anda kepada kami untuk
+        mendapatkan solusi yang efisien, akurat, dan sesuai dengan ketentuan
+        yang berlaku.
       </Description>
     </div>
   </div>
@@ -99,12 +100,12 @@ const Reddit = icon({ prefix: 'fab', iconName: 'reddit' })
     <div class="flex flex-col gap-2">
       <Description class="!font-semibold"> Get Started </Description>
       <div class="flex flex-col opacity-80">
-        <a href="/download" class="font-normal">Download</a>
-        <a href="/mods" class="font-normal">Zen Mods</a>
-        <a href="/release-notes" class="font-normal">Release Notes</a>
-        <a href="/download?twilight" class="font-normal">Twilight</a>
+        <a href="/download" class="font-normal">SPT Tahunan</a>
+        <a href="/mods" class="font-normal">Konsultasi UMKM</a>
+        <a href="/release-notes" class="font-normal">Dokumentasi Pajak</a>
       </div>
     </div>
+    {/*
     <div class="flex flex-col gap-2">
       <Description class="!font-semibold"> Get Help </Description>
       <div class="flex flex-col opacity-80">
@@ -128,6 +129,7 @@ const Reddit = icon({ prefix: 'fab', iconName: 'reddit' })
         >
       </div>
     </div>
+     */}
   </div>
   <div class="flex h-32 w-full items-center">
     <div class="flex">
@@ -135,10 +137,12 @@ const Reddit = icon({ prefix: 'fab', iconName: 'reddit' })
         >Zen Browser Team</a
       >
     </div>
+    {/* 
     <Circles
       white
       multiplier={0.7}
       class="mb-[-100px] ml-auto mr-[-80px] hidden lg:block"
     />
+    */}
   </div>
 </footer>
