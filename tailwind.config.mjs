@@ -10,7 +10,7 @@ export default {
       },
       colors: {
         paper: 'var(--zen-paper)',
-        coral: '#F76F53',
+        coral: '#f25f4c',
         dark: 'var(--zen-dark)',
         muted: 'var(--zen-muted)',
         'zen-blue': '#6287f5',

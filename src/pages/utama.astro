@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Hero from '../components/Hero.astro'
+import Community from '../components/Community.astro'
+import Features from '../components/Features.astro'
+import HomeExtras from '../components/HomeExtras.astro'
+---
+
+<Layout title="Zen Browser">
+  <main>
+    <Hero />
+    <Community />
+    <Features />
+    <HomeExtras />
+  </main>
+</Layout>
+<style>
+  @keyframes headerSlideIn {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  #header-browser-image {
+    animation: headerSlideIn 0.5s ease-in-out;
+  }
+</style>
+<script></script>

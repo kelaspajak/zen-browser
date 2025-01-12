@@ -82,15 +82,20 @@ import Footer from '../components/Footer.astro'
   }
 
   :root {
-    --zen-paper: #f2f0e3;
-    --zen-dark: #202020;
+    --zen-paper: #eff0f3;
+    --zen-dark: #0d0d0d;
     --zen-muted: rgba(0, 0, 0, 0.05);
 
     &[data-theme='dark'] {
-      --zen-paper: #202020;
-      --zen-dark: #f2f0e3;
+      --zen-paper: #0f0e17;
+      --zen-dark: #fffffe;
       --zen-muted: rgba(255, 255, 255, 0.05);
     }
+  }
+
+  ::selection {
+    background-color: var(--zen-dark);
+    color: var(--zen-paper);
   }
 
   * {

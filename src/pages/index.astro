@@ -1,31 +1,104 @@
 ---
+import Button from '../components/Button.astro'
+import Description from '../components/Description.astro'
+import Hero from '../components/hero-one.astro'
+import Title from '../components/Title.astro'
 import Layout from '../layouts/Layout.astro'
-import Hero from '../components/Hero.astro'
-import Community from '../components/Community.astro'
-import Features from '../components/Features.astro'
-import HomeExtras from '../components/HomeExtras.astro'
+import { Image } from 'astro:assets'
+
+import browserCollapsed from '../assets/collapsed.png'
+import browseMultiToolbar from '../assets/multiple-toolbar.png'
+import browserSingleToolbar from '../assets/single-toolbar.png'
+import { ArrowRight } from 'lucide-astro'
+
+const layanan = [
+  {
+    "title": "SPT Tahunan PPh Badan",
+    "deskripsi": "Kami bantu Anda menyelesaikan kewajiban pajak tahunan perusahaan secara tepat dan efisien. Tim kami menghitung, menyusun, dan melaporkan SPT Tahunan PPh Badan sesuai peraturan terbaru.",
+    "fitur": [
+      "Memastikan perhitungan pajak yang akurat",
+      "Bantuan rekonsiliasi fiskal",
+      "Menghindari keterlambatan pelaporan pajak",
+      "Solusi atas kendala pengisian SPT"
+    ]
+  },
+  {
+    "title": "Konsultasi Perpajakan",
+    "deskripsi": "Tim ahli kami siap memberikan solusi untuk setiap masalah perpajakan perusahaan Anda. Dapatkan panduan dan strategi perpajakan yang legal dan efisien.",
+    "fitur": [
+      "Strategi perpajakan yang efisien",
+      "Pendampingan saat pemeriksaan pajak",
+      "Pemahaman dampak peraturan pajak terbaru",
+      "Solusi masalah atau sengketa perpajakan"
+    ]
+  },
+  {
+    "title": "Dokumentasi Perpajakan",
+    "deskripsi": "Kami menyediakan database lengkap dan terupdate tentang peraturan perpajakan. Anda bisa tetap mengikuti perkembangan regulasi terbaru beserta interpretasinya.",
+    "fitur": [
+      "Akses cepat ke peraturan perpajakan terbaru",
+      "Pemahaman perubahan kebijakan pajak dan dampaknya",
+      "Materi sosialisasi perpajakan yang lengkap",
+      "Rangkuman dan analisis peraturan pajak"
+    ]
+  }
+];
 ---
 
-<Layout title="Zen Browser">
-  <main>
-    <Hero />
-    <Community />
-    <Features />
-    <HomeExtras />
+<Layout title="About - Zen Browser">
+  <Hero />
+  <main
+    class="relative flex min-h-screen flex-col items-center justify-center py-24"
+  >
+    
+  {layanan.map((item) => (
+  <section
+  id="customization"
+  class="relative flex w-full flex-col gap-16 overflow-y-hidden px-4 py-36 pt-24 lg:flex-row lg:px-12 xl:px-24"
+>
+  <div>
+    <Title>{item.title}</Title>
+    <Description class="lg:w-1/2 lg:px-0">{item.deskripsi}</Description>
+    <div class="mt-4 flex">
+      <Button isPrimary href="/mods">
+        Zen Mods
+        <ArrowRight className="size-4" />
+      </Button>
+    </div>
+  </div>
+  <div class="relative ml-16 flex h-32 lg:mx-0 lg:w-1/2" id="browser-images">
+    <Image
+      src={browserCollapsed}
+      alt="Zen browser"
+      class="absolute left-[65%] top-[5%] w-2/3 -translate-x-1/2 rounded-md shadow-md"
+    />
+    <Image
+      src={browseMultiToolbar}
+      alt="Zen browser"
+      class="absolute left-1/2 top-1/2 mx-auto w-2/3 -translate-x-1/2 transform rounded-md border-2"
+    />
+    <Image
+      src={browserSingleToolbar}
+      alt="Zen browser"
+      class="absolute left-[10%] top-[15%] z-10 w-2/3 -translate-x-1/2 rounded-md shadow-md"
+    />
+  </div>
+</section>
+))}
   </main>
 </Layout>
 <style>
-  @keyframes headerSlideIn {
-    0% {
-      transform: translateY(100%);
+  #browser-images {
+    & img:nth-child(1) {
+      transform: rotate(5deg) scale(1.05) translateX(-52%) translateY(-10%);
     }
-    100% {
-      transform: translateY(0);
-    }
-  }
 
-  #header-browser-image {
-    animation: headerSlideIn 0.5s ease-in-out;
+    & img:nth-child(2) {
+      transform: rotate(2deg) scale(1.05) translateX(-50%) translateY(10%);
+    }
+
+    & img:nth-child(3) {
+      transform: rotate(-5deg) scale(1.05) translateX(-50%) translateY(-10%);
+    }
   }
 </style>
-<script></script>
