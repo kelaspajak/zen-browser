@@ -10,9 +10,12 @@ import { ArrowRight } from 'lucide-astro'
 import image01 from '/public/gambar-spt/gambar01.jpg'
 import image02 from '/public/gambar-spt/gambar02.jpg'
 import image03 from '/public/gambar-spt/gambar03.jpg'
-import image05 from '/public/gambar-spt/gambar05.jpg'
-import image06 from '/public/gambar-spt/gambar06.jpg'
-import image07 from '/public/gambar-spt/gambar07.jpg'
+import image11 from '/public/gambar-spt/image11.jpg'
+import image12 from '/public/gambar-spt/image12.jpg'
+import image13 from '/public/gambar-spt/image13.jpg'
+import image08 from '/public/gambar-spt/image08.png'
+import image09 from '/public/gambar-spt/image09.png'
+import image10 from '/public/gambar-spt/image10.png'
 
 const layanan = [
   {
@@ -37,7 +40,7 @@ const layanan = [
       'Pemahaman dampak peraturan pajak terbaru',
       'Solusi masalah atau sengketa perpajakan',
     ],
-    gambar: [image01, image02, image03],
+    gambar: [image11, image12, image13],
   },
   {
     title: 'Dokumentasi Perpajakan',
@@ -49,7 +52,7 @@ const layanan = [
       'Materi sosialisasi perpajakan yang lengkap',
       'Rangkuman dan analisis peraturan pajak',
     ],
-    gambar: [image05, image06, image07],
+    gambar: [image08, image09, image10],
   },
 ]
 ---
@@ -70,7 +73,7 @@ const layanan = [
             <Description class="lg:w-2/3 lg:px-0">{item.deskripsi}</Description>
             <div class="mt-4 flex">
               <Button isPrimary href="/mods">
-                Zen Mods
+                Pelajari
                 <ArrowRight className="size-4" />
               </Button>
             </div>
@@ -83,7 +86,7 @@ const layanan = [
               <Image
                 src={img}
                 alt={`Less Summer - ${item.title}`}
-                class={`border-3 absolute w-2/3 rounded-md shadow-md ${
+                class={`border-3 border-neutral-400 absolute w-2/3 rounded-md shadow-md ${
                   index === 0
                     ? 'left-[65%] top-[5%] -translate-x-1/2'
                     : index === 1
