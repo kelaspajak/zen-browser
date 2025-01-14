@@ -19,9 +19,9 @@ import { ThemeSwitch } from 'free-astro-components'
   id="nav-bar"
   class="relative z-20 flex w-full items-center justify-between lg:px-6 lg:pt-3"
 >
-  <Astronav>
+  <Astronav closeOnClick>
     <MenuItems
-      class="relative mx-auto flex w-full gap-2 bg-paper p-2 lg:w-fit lg:gap-20"
+      class="relative mx-auto flex w-full flex-wrap justify-between gap-2 bg-paper p-2 lg:gap-20"
     >
       <a class="mr-3 flex items-center gap-2 text-lg font-bold" href="/">
         <Logo class="size-5" />
@@ -131,6 +131,7 @@ import { ThemeSwitch } from 'free-astro-components'
     </MenuItems>
   </Astronav>
 </nav>
+
 <style>
   .navbar-dropdown {
     @apply absolute grid grid-cols-2 gap-2 rounded-lg border-2 border-dark bg-paper p-3 shadow-sm;
