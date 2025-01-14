@@ -7,19 +7,15 @@ import Title from '../components/Title.astro'
 
 import { icon, library } from '@fortawesome/fontawesome-svg-core'
 import {
-  faBluesky,
-  faGithub,
-  faMastodon,
-  faReddit,
-  faTwitter,
+  faFacebook,
+  faWhatsapp,
+  faTelegram,
 } from '@fortawesome/free-brands-svg-icons'
 
-library.add(faMastodon, faBluesky, faGithub, faTwitter, faReddit)
-const Mastodon = icon({ prefix: 'fab', iconName: 'mastodon' })
-const Bluesky = icon({ prefix: 'fab', iconName: 'bluesky' })
-const Github = icon({ prefix: 'fab', iconName: 'github' })
-const Twitter = icon({ prefix: 'fab', iconName: 'twitter' })
-const Reddit = icon({ prefix: 'fab', iconName: 'reddit' })
+library.add(faFacebook, faWhatsapp, faTelegram)
+const Facebook = icon({ prefix: 'fab', iconName: 'facebook' })
+const Whatsapp = icon({ prefix: 'fab', iconName: 'whatsapp' })
+const Telegram = icon({ prefix: 'fab', iconName: 'telegram' })
 ---
 
 <footer
@@ -46,46 +42,54 @@ const Reddit = icon({ prefix: 'fab', iconName: 'reddit' })
     <div class="flex flex-col gap-10">
       <div class="flex flex-col gap-2">
         <Description class="!font-semibold"> Follow Us </Description>
-        <div class="flex items-center gap-4 opacity-80">
+        <div class="flex flex-col items-center gap-4 opacity-80">
           <a
-            href="https://github.com/zen-browser"
+            href="https://t.me/lesssummerupdate"
             target="_blank"
             class="font-bold"
-            aria-label="Visit Zen Browser on GitHub"
+            aria-label="Kunjungi channel telegram Less Summer Update Info Perpajakan"
           >
-            <Fragment set:html={Github.html} />
+            <Fragment set:html={Telegram.html} /> Channel Update
           </a>
           <a
-            href="https://twitter.com/zen_browser"
+            href="https://t.me/diskusipajak"
             target="_blank"
-            class="font-normal"
-            aria-label="Visit Zen Browser on Twitter"
+            class="font-bold"
+            aria-label="Kunjungi grup diskusi pajak"
           >
-            <Fragment set:html={Twitter.html} />
+            <Fragment set:html={Telegram.html} /> Grup Diskusi Pajak
           </a>
           <a
-            href="https://fosstodon.org/@zenbrowser"
+            href="https://t.me/diskusiperpajakan"
             target="_blank"
-            class="font-normal"
-            aria-label="Visit Zen Browser on Mastodon"
+            class="font-bold"
+            aria-label="Kunjungi grup diskusi pajak khusus aplikasi"
           >
-            <Fragment set:html={Mastodon.html} />
+            <Fragment set:html={Telegram.html} /> Grup Diskusi Coretax
           </a>
           <a
-            href="https://bsky.app/profile/zen-browser.app"
+            href="https://www.facebook.com/diskusipajak"
             target="_blank"
             class="font-normal"
-            aria-label="Visit Zen Browser on Bluesky"
+            aria-label="Facebook Halaman Diskusi Pajak"
           >
-            <Fragment set:html={Bluesky.html} />
+            <Fragment set:html={Facebook.html} /> FB Pages
           </a>
           <a
-            href="https://www.reddit.com/r/zen_browser"
+            href="https://www.facebook.com/groups/diskusipajak"
             target="_blank"
             class="font-normal"
-            aria-label="Visit Zen Browser on Reddit"
+            aria-label="Facebook Grup Diskusi Pajak"
           >
-            <Fragment set:html={Reddit.html} />
+            <Fragment set:html={Facebook.html} /> FB Grup
+          </a>
+          <a
+            href="https://whatsapp.com/channel/0029VaxOUaWDeONB1JaDXr3m"
+            target="_blank"
+            class="font-normal"
+            aria-label="Whatsapp Broadcast Diskusi Pajak"
+          >
+            <Fragment set:html={Whatsapp.html} /> WA Channel
           </a>
         </div>
       </div>
@@ -137,12 +141,17 @@ const Reddit = icon({ prefix: 'fab', iconName: 'reddit' })
         >Zen Browser Team</a
       >
     </div>
-    {/* 
+    <!-- <Logos class="size-[8rem] mb-[-100px] ml-auto mr-[-80px] hidden lg:block"/> -->
+    {/* */}
     <Circles
       white
       multiplier={0.7}
-      class="mb-[-100px] ml-auto mr-[-80px] hidden lg:block"
+      class="mb-[-100px] ml-auto mr-[-80px] hidden lg:block size-[8rem] "
     />
-    */}
+    
+<!-- 
+<Circles 
+class="absolute mb-[-100px] ml-auto xmr-[-80px] hidden -translate-x-1/2 -translate-y-1/2"
+/>
   </div>
-</footer>
+</footer> -->

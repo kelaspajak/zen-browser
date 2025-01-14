@@ -1,14 +1,15 @@
 {
-  "name": "www",
+  "name": "spt-tahunan",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev --port 3000",
     "start": "astro preview --port 3000",
     "build": "astro check && astro build",
-    "preview": "astro preview --port 3000",
     "wrangler": "wrangler",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler pages dev"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",

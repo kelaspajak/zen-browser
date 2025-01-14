@@ -8,21 +8,28 @@ const borderWidths = [20, 30, 40, 50]
   id="circles"
   class:list={['pointer-events-none inset-0 overflow-hidden', classList]}
 >
-  <div class="mx-auto opacity-10 lg:opacity-100">
+  <div class="mx-auto opacity-10 lg:opacity-80">
     {
-      [...Array(4)].map((_, i) => (
+      (
         <div
           class:list={[
             'absolute -translate-x-1/2 -translate-y-1/2 rounded-full',
             white ? 'border-paper' : 'border-coral',
           ]}
-          style={{
-            width: `${multiplier * sizes[i]}px`,
-            height: `${multiplier * sizes[i]}px`,
-            borderWidth: `${multiplier * borderWidths[i]}px`,
-          }}
-        />
-      ))
+        >
+          <svg
+            class="fill-coral"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="240"
+            height="240"
+            fill="currentColor"
+          >
+            <path d="M10 10.1111V1L21 7V21H3V7L10 10.1111Z" />
+          </svg>
+        </div>
+      )
     }
+    </div
   </div>
 </div>
