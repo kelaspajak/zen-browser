@@ -42,7 +42,7 @@ const Telegram = icon({ prefix: 'fab', iconName: 'telegram' })
     <div class="flex flex-col gap-10">
       <div class="flex flex-col gap-2">
         <Description class="!font-semibold"> Follow Us </Description>
-        <div class="flex flex-col items-center gap-4 opacity-80">
+        <div class="items-centerxxx flex flex-col gap-2 opacity-80">
           <a
             href="https://t.me/lesssummerupdate"
             target="_blank"
@@ -93,7 +93,18 @@ const Telegram = icon({ prefix: 'fab', iconName: 'telegram' })
           </a>
         </div>
       </div>
+    </div>
+    <div class="flex flex-col gap-10">
       <div class="flex flex-col gap-2">
+        <Description class="!font-semibold"> Get Started </Description>
+        <div class="flex flex-col opacity-80">
+          <a href="/download" class="font-normal">SPT Tahunan</a>
+          <a href="/mods" class="font-normal">Konsultasi UMKM</a>
+          <a href="/release-notes" class="font-normal">Dokumentasi Pajak</a>
+        </div>
+      </div>
+
+      <div class="flex hidden flex-col gap-2">
         <Description class="!font-semibold"> About Us </Description>
         <div class="flex flex-col opacity-80">
           <a href="/about" class="font-normal">About Us</a>
@@ -101,15 +112,8 @@ const Telegram = icon({ prefix: 'fab', iconName: 'telegram' })
         </div>
       </div>
     </div>
-    <div class="flex flex-col gap-2">
-      <Description class="!font-semibold"> Get Started </Description>
-      <div class="flex flex-col opacity-80">
-        <a href="/download" class="font-normal">SPT Tahunan</a>
-        <a href="/mods" class="font-normal">Konsultasi UMKM</a>
-        <a href="/release-notes" class="font-normal">Dokumentasi Pajak</a>
-      </div>
-    </div>
-    {/*
+    {
+      /*
     <div class="flex flex-col gap-2">
       <Description class="!font-semibold"> Get Help </Description>
       <div class="flex flex-col opacity-80">
@@ -133,12 +137,13 @@ const Telegram = icon({ prefix: 'fab', iconName: 'telegram' })
         >
       </div>
     </div>
-     */}
+     */
+    }
   </div>
   <div class="flex h-32 w-full items-center">
     <div class="flex">
       Made with ❤️ by the <a href="/about" class="ml-2 inline-block font-bold"
-        >Zen Browser Team</a
+        >Less Summer</a
       >
     </div>
     <!-- <Logos class="size-[8rem] mb-[-100px] ml-auto mr-[-80px] hidden lg:block"/> -->
@@ -146,12 +151,14 @@ const Telegram = icon({ prefix: 'fab', iconName: 'telegram' })
     <Circles
       white
       multiplier={0.7}
-      class="mb-[-100px] ml-auto mr-[-80px] hidden lg:block size-[8rem] "
+      class="mb-[-100px] ml-auto mr-[-80px] hidden size-[8rem] lg:block"
     />
-    
-<!-- 
+
+    <!-- 
 <Circles 
 class="absolute mb-[-100px] ml-auto xmr-[-80px] hidden -translate-x-1/2 -translate-y-1/2"
 />
   </div>
 </footer> -->
+  </div>
+</footer>
