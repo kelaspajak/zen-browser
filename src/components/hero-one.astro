@@ -1,4 +1,9 @@
 ---
+import { Image } from 'astro:assets'
+import image01 from '/public/gambar-spt/gambar01.jpg'
+import image02 from '/public/gambar-spt/gambar02.jpg'
+import image03 from '/public/gambar-spt/gambar03.jpg'
+
 import Title from '../components/Title.astro'
 import Description from '../components/Description.astro'
 import Button from '../components/Button.astro'
@@ -15,6 +20,7 @@ function getNewAnimationDelay() {
 function getHeroTitleAnimation() {
   return getTitleAnimation(getNewAnimationDelay())
 }
+const layanan = [image01, image02, image03]
 ---
 
 <header
@@ -32,28 +38,36 @@ function getHeroTitleAnimation() {
       <ArrowRight class="size-4" />
     </motion.a>
     <Title
-      class="relative px-12 text-left !font-normal leading-[108px] md:text-center md:!text-7xl lg:px-0 lg:!text-9xl"
+      class="relative px-12 text-left !font-normal leading-[108px] md:text-center md:!text-7xl lg:px-0 lg:!text-8xl"
     >
       <motion.span client:load {...getHeroTitleAnimation()}>
-        Permudah
+        Lebih dari
       </motion.span>
       <motion.span client:load {...getHeroTitleAnimation()}>
-        Bisnis.
+        Sekadar
       </motion.span>
       <br class="hidden md:block" />
-      <motion.span client:load {...getHeroTitleAnimation()}>
-        Ringankan
-      </motion.span>
       <motion.span
         client:load
         {...getHeroTitleAnimation()}
         className="italic text-coral"
       >
-        Pajak
+        Layanan Pajak.
       </motion.span>
+      <br class="hidden md:block" />
+      <motion.span client:load {...getHeroTitleAnimation()}>
+        Sebuah
+      </motion.span>
+      <motion.span client:load {...getHeroTitleAnimation()}>
+        Solusi.
+      </motion.span>
+      {
+        /*
       <motion.span client:load {...getHeroTitleAnimation()}>
         Anda.
       </motion.span>
+      */
+      }
     </Title>
     <motion.span client:load {...getHeroTitleAnimation()}>
       <Description class="max-w-3xl px-12 text-left md:text-center lg:px-0"
@@ -77,3 +91,4 @@ function getHeroTitleAnimation() {
     </div>
   </div>
 </header>
+

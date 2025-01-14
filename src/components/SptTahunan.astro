@@ -1,0 +1,62 @@
+---
+import { Image } from 'astro:assets'
+import { motion } from 'motion/react'
+import image01 from '/public/gambar-spt/spt-1771-0.png'
+import image03 from '/public/gambar-spt/spt-1771-i.png'
+import image02 from '/public/gambar-spt/spt-1771-iv.png'
+import Description from '../components/Description.astro'
+import Title from '../components/Title.astro'
+
+import { getTitleAnimation, getZoomInAnimation } from '../animations'
+const layanan = [image01, image02, image03]
+---
+
+<section id="sponsors" class="px-4 py-40 pt-32 lg:flex-row lg:px-12 xl:px-24">
+  <div class="mx-auto flex flex-col items-center text-center lg:w-1/2">
+    <motion.span client:load {...getTitleAnimation(0.2)}>
+      <Title>SPT Tahunan PPh Badan</Title>
+    </motion.span>
+    <motion.span client:load {...getTitleAnimation(0.4)}>
+      <Description>
+        Kami bantu Anda menyelesaikan kewajiban pajak tahunan perusahaan secara
+        tepat dan efisien. Tim kami menghitung, menyusun, dan melaporkan SPT
+        Tahunan PPh Badan sesuai peraturan terbaru.
+      </Description>
+    </motion.span>
+    <div
+      class="gambar relative mt-20 flex w-full items-center justify-center py-32"
+    >
+      {
+        layanan.map((img, index) => (
+          <Image
+            id="browser-images"
+            src={img}
+            alt={`Less Summer - ${index}`}
+            class={`max-w-2/3 border-dark/30 absolute rounded-md border-4 shadow-md ${
+              index === 0
+                ? 'left-[65%] top-[5%] z-10 -translate-x-1/2'
+                : index === 1
+                  ? 'left-1/2 top-1/2 -translate-x-1/2 transform'
+                  : 'left-[10%] top-[15%] z-10 -translate-x-1/2'
+            }`}
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>
+<style>
+  .gambar {
+    & img:nth-child(1) {
+      transform: rotate(5deg) scale(0.875) translateX(-52%) translateY(-10%);
+    }
+
+    & img:nth-child(2) {
+      transform: rotate(2deg) scale(0.875) translateX(-50%) translateY(10%);
+    }
+
+    & img:nth-child(3) {
+      transform: rotate(-5deg) scale(0.875) translateX(-50%) translateY(-10%);
+    }
+  }
+</style>

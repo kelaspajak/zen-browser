@@ -5,7 +5,7 @@ import Description from '../components/Description.astro'
 import Title from '../components/Title.astro'
 import Hero from '../components/hero-one.astro'
 import Layout from '../layouts/Layout.astro'
-import SptTahunan from '../components/SptTahunan.astro'
+import HomeExtras from '../components/HomeExtras.astro'
 
 
 import { ArrowRight } from 'lucide-astro'
@@ -58,8 +58,44 @@ const layanan = [
 ]
 ---
 
-<Layout title="About - Less Summer">
-  <Hero />
-  <SptTahunan />
-  
-</Layout>
+<main id="features"
+    class="relative flex min-h-screen flex-col items-center justify-center py-24"
+  >
+    {
+      layanan.map((item) => (
+        <section
+          id="customization"
+          class="relative flex w-full flex-col gap-16 overflow-y-hidden px-4 py-30 pt-24 lg:flex-row lg:px-12 xl:px-24"
+        >
+          <div>
+            <Title>{item.title}</Title>
+            <Description class="lg:w-2/3 lg:px-0">{item.deskripsi}</Description>
+            <div class="mt-4 flex">
+              <Button isPrimary href="/mods">
+                Pelajari
+                <ArrowRight className="size-4" />
+              </Button>
+            </div>
+          </div>
+          <div
+            class="relative ml-16 flex h-32 lg:mx-0 lg:w-1/2"
+            id="browser-images"
+          >
+            {item.gambar.map((img, index) => (
+              <Image
+                src={img}
+                alt={`Less Summer - ${item.title}`}
+                class={`border-3 absolute w-2/3 rounded-md border-neutral-400 shadow-md ${
+                  index === 0
+                    ? 'left-[65%] top-[5%] -translate-x-1/2'
+                    : index === 1
+                      ? 'left-1/2 top-1/2 -translate-x-1/2 transform'
+                      : 'left-[10%] top-[15%] z-10 -translate-x-1/2'
+                }`}
+              />
+            ))}
+          </div>
+        </section>
+      ))
+    }
+  </main>
