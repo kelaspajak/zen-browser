@@ -1,12 +1,12 @@
 ---
-import Title from '../components/Title.astro'
-import Description from '../components/Description.astro'
-import Button from '../components/Button.astro'
 import { Image } from 'astro:assets'
-import myImage from '../assets/browsers.png'
 import { ArrowRight } from 'lucide-astro'
 import { motion } from 'motion/react'
 import { getTitleAnimation } from '../animations'
+import myImage from '../assets/browsers.png'
+import Button from '../components/Button.astro'
+import Description from '../components/Description.astro'
+import Title from '../components/Title.astro'
 
 let titleAnimationCounter = 0
 function getNewAnimationDelay() {
@@ -25,7 +25,7 @@ function getHeroTitleAnimation() {
 >
   <div class="flex h-full flex-col items-center justify-center">
     <motion.a
-      href="/download"
+      href="https://drive.google.com/file/d/1VRpymh_RBTPEnDdvrXmq_-516i07PdCz/view?usp=sharing"
       className="transition-bg mb-10 flex items-center gap-2 rounded-full border-2 border-dark bg-dark px-2 py-0 py-1 text-sm text-paper shadow-sm hover:bg-paper hover:text-dark hover:duration-200 md:px-4"
       client:load
       {...getTitleAnimation(1.8)}
@@ -36,24 +36,44 @@ function getHeroTitleAnimation() {
     <Title
       class="relative px-12 text-left !font-normal leading-[108px] md:text-center md:!text-7xl lg:px-0 lg:!text-9xl"
     >
-      <motion.span client:load {...getHeroTitleAnimation()}> Permudah </motion.span>
-      <motion.span client:load {...getHeroTitleAnimation()}> Bisnis. </motion.span>
+      <motion.span client:load {...getHeroTitleAnimation()}>
+        Permudah
+      </motion.span>
+      <motion.span client:load {...getHeroTitleAnimation()}>
+        Bisnis.
+      </motion.span>
       <br class="hidden md:block" />
-      <motion.span client:load {...getHeroTitleAnimation()}> Ringankan </motion.span>
-      <motion.span client:load {...getHeroTitleAnimation()} className="italic text-coral"> Pajak </motion.span>
-      <motion.span client:load {...getHeroTitleAnimation()}> Anda. </motion.span>
+      <motion.span client:load {...getHeroTitleAnimation()}>
+        Ringankan
+      </motion.span>
+      <motion.span
+        client:load
+        {...getHeroTitleAnimation()}
+        className="italic text-coral"
+      >
+        Pajak
+      </motion.span>
+      <motion.span client:load {...getHeroTitleAnimation()}>
+        Anda.
+      </motion.span>
     </Title>
     <motion.span client:load {...getHeroTitleAnimation()}>
       <Description class="max-w-3xl px-12 text-left md:text-center lg:px-0"
-        >Kelola kewajiban pajak Anda dengan cara yang lebih mudah, efisien, dan terpercaya. SPT UMKM dari Less Summer
-        adalah layanan yang dirancang khusus untuk pelaporan SPT Tahunan PPh Badan UMKM Tahun Pajak 2024, membantu
-        bisnis Anda menyederhanakan proses pajak yang sering kali rumit. Kami memahami bahwa mengurus pajak bisa menjadi
-        tantangan, tetapi dengan layanan kami, Anda tidak perlu khawatir lagi.</Description
+        >Kelola kewajiban pajak Anda dengan cara yang lebih mudah, efisien, dan
+        terpercaya. SPT UMKM dari Less Summer adalah layanan yang dirancang
+        khusus untuk pelaporan SPT Tahunan PPh Badan UMKM Tahun Pajak 2024,
+        membantu bisnis Anda menyederhanakan proses pajak yang sering kali
+        rumit. Kami memahami bahwa mengurus pajak bisa menjadi tantangan, tetapi
+        dengan layanan kami, Anda tidak perlu khawatir lagi.</Description
       >
     </motion.span>
     <div class="mt-6 flex w-2/3 flex-col gap-3 sm:gap-6 md:w-fit md:flex-row">
       <motion.span client:load {...getHeroTitleAnimation()}>
-        <Button class="w-full" href="/download" isPrimary>
+        <Button
+          class="w-full"
+          href="https://drive.google.com/file/d/1VRpymh_RBTPEnDdvrXmq_-516i07PdCz/view?usp=sharing"
+          isPrimary
+        >
           Konsultasi Sekarang
           <ArrowRight class="size-4" />
         </Button>
@@ -65,5 +85,10 @@ function getHeroTitleAnimation() {
   </div>
 </header>
 <motion.span client:load {...getHeroTitleAnimation()}>
-  <Image src={myImage} alt="Zen browser" class="mx-auto mb-24" loading="eager" />
+  <Image
+    src={myImage}
+    alt="Zen browser"
+    class="mx-auto mb-24"
+    loading="eager"
+  />
 </motion.span>

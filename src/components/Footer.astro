@@ -6,7 +6,11 @@ import Description from '../components/Description.astro'
 import Title from '../components/Title.astro'
 
 import { icon, library } from '@fortawesome/fontawesome-svg-core'
-import { faFacebook, faWhatsapp, faTelegram } from '@fortawesome/free-brands-svg-icons'
+import {
+  faFacebook,
+  faTelegram,
+  faWhatsapp,
+} from '@fortawesome/free-brands-svg-icons'
 
 library.add(faFacebook, faWhatsapp, faTelegram)
 const Facebook = icon({ prefix: 'fab', iconName: 'facebook' })
@@ -22,12 +26,15 @@ const Telegram = icon({ prefix: 'fab', iconName: 'telegram' })
     <div>
       <Title class="!text-paper">Less Summer</Title>
       <Description class="px-4 lg:w-2/5 lg:px-0">
-        Percayakan pengelolaan perpajakan perusahaan Anda kepada kami untuk mendapatkan solusi yang efisien, akurat, dan
-        sesuai dengan ketentuan yang berlaku.
+        Percayakan pengelolaan perpajakan perusahaan Anda kepada kami untuk
+        mendapatkan solusi yang efisien, akurat, dan sesuai dengan ketentuan
+        yang berlaku.
       </Description>
     </div>
   </div>
-  <div class="flex w-full md:w-2/3 flex-col justify-between gap-6 lg:my-12 lg:flex-row lg:pr-52">
+  <div
+    class="flex w-full flex-col justify-between gap-6 md:w-2/3 lg:my-12 lg:flex-row lg:pr-52"
+  >
     <div class="flex flex-col gap-10">
       <div class="flex flex-col gap-2">
         <Description class="!font-semibold"> Follow Us </Description>
@@ -87,7 +94,10 @@ const Telegram = icon({ prefix: 'fab', iconName: 'telegram' })
       <div class="flex flex-col gap-2">
         <Description class="!font-semibold"> Get Started </Description>
         <div class="flex flex-col opacity-80">
-          <a href="/download" class="font-normal">SPT Tahunan</a>
+          <a
+            href="https://drive.google.com/file/d/1VRpymh_RBTPEnDdvrXmq_-516i07PdCz/view?usp=sharing"
+            class="font-normal">SPT Tahunan</a
+          >
           <a href="/mods" class="font-normal">Konsultasi UMKM</a>
           <a href="/release-notes" class="font-normal">Dokumentasi Pajak</a>
         </div>
@@ -131,11 +141,17 @@ const Telegram = icon({ prefix: 'fab', iconName: 'telegram' })
   </div>
   <div class="flex h-32 w-full items-center">
     <div class="flex">
-      Made with ❤️ by the <a href="/about" class="ml-2 inline-block font-bold">Less Summer</a>
+      Made with ❤️ by the <a href="/about" class="ml-2 inline-block font-bold"
+        >Less Summer</a
+      >
     </div>
     <!-- <Logos class="size-[8rem] mb-[-100px] ml-auto mr-[-80px] hidden lg:block"/> -->
     {/* */}
-    <Circles white multiplier={0.7} class="mb-[-100px] ml-auto mr-[-80px] hidden size-[8rem] lg:block" />
+    <Circles
+      white
+      multiplier={0.7}
+      class="mb-[-100px] ml-auto mr-[-80px] hidden size-[8rem] lg:block"
+    />
 
     <!--
 <Circles

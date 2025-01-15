@@ -1,16 +1,28 @@
 ---
-import Title from '../components/Title.astro'
-import Description from '../components/Description.astro'
-import Button from '../components/Button.astro'
-import { Astronav, MenuItems, MenuIcon, Dropdown, DropdownItems, DropdownSubmenu } from 'astro-navbar'
-import { ArrowRight, ChevronDown, Download } from 'lucide-astro'
-import Logo from './Logo.astro'
+import {
+  Astronav,
+  Dropdown,
+  DropdownItems,
+  DropdownSubmenu,
+  MenuIcon,
+  MenuItems,
+} from 'astro-navbar'
 import { ThemeSwitch } from 'free-astro-components'
+import { ArrowRight, ChevronDown, Download } from 'lucide-astro'
+import Button from '../components/Button.astro'
+import Description from '../components/Description.astro'
+import Title from '../components/Title.astro'
+import Logo from './Logo.astro'
 ---
 
-<nav id="nav-bar" class="relative z-20 flex w-full items-center justify-between lg:px-6 lg:pt-3">
+<nav
+  id="nav-bar"
+  class="relative z-20 flex w-full items-center justify-between lg:px-6 lg:pt-3"
+>
   <Astronav closeOnClick>
-    <MenuItems class="relative mx-auto flex w-full flex-wrap justify-between gap-2 bg-paper p-2 lg:gap-20">
+    <MenuItems
+      class="relative mx-auto flex w-full flex-wrap justify-between gap-2 bg-paper p-2 lg:gap-20"
+    >
       <a class="mr-3 flex items-center gap-2 text-lg font-bold" href="/">
         <Logo class="size-5" />
         <span class="">SPT Tahunan</span>
@@ -106,7 +118,11 @@ import { ThemeSwitch } from 'free-astro-components'
         <div id="theme-switcher" class="ml-auto md:mr-2">
           <ThemeSwitch label="" class="px-1 py-2" />
         </div>
-        <Button href="/download" class="ml-auto" isPrimary>
+        <Button
+          href="https://drive.google.com/file/d/1VRpymh_RBTPEnDdvrXmq_-516i07PdCz/view?usp=sharing"
+          class="ml-auto"
+          isPrimary
+        >
           <span class="hidden items-center gap-2 md:flex">
             Download Proposal
             <ArrowRight class="size-4" />

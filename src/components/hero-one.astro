@@ -4,12 +4,12 @@ import image01 from '/public/gambar-spt/gambar01.jpg'
 import image02 from '/public/gambar-spt/gambar02.jpg'
 import image03 from '/public/gambar-spt/gambar03.jpg'
 
-import Title from '../components/Title.astro'
-import Description from '../components/Description.astro'
-import Button from '../components/Button.astro'
 import { ArrowRight } from 'lucide-astro'
 import { motion } from 'motion/react'
 import { getTitleAnimation } from '../animations'
+import Button from '../components/Button.astro'
+import Description from '../components/Description.astro'
+import Title from '../components/Title.astro'
 
 let titleAnimationCounter = 0
 function getNewAnimationDelay() {
@@ -29,7 +29,7 @@ const layanan = [image01, image02, image03]
 >
   <div class="flex h-full flex-col items-center justify-center">
     <motion.a
-      href="/download"
+      href="https://drive.google.com/file/d/1VRpymh_RBTPEnDdvrXmq_-516i07PdCz/view?usp=sharing"
       className="transition-bg mb-10 flex items-center gap-2 rounded-full border-2 border-dark bg-dark px-2 py-0 py-1 text-sm text-paper shadow-sm hover:bg-paper hover:text-dark hover:duration-200 md:px-4"
       client:load
       {...getTitleAnimation(1.8)}
@@ -40,13 +40,27 @@ const layanan = [image01, image02, image03]
     <Title
       class="relative px-12 text-left !font-normal leading-[108px] md:text-center md:!text-7xl lg:px-0 lg:!text-8xl"
     >
-      <motion.span client:load {...getHeroTitleAnimation()}> Lebih dari </motion.span>
-      <motion.span client:load {...getHeroTitleAnimation()}> Sekadar </motion.span>
+      <motion.span client:load {...getHeroTitleAnimation()}>
+        Lebih dari
+      </motion.span>
+      <motion.span client:load {...getHeroTitleAnimation()}>
+        Sekadar
+      </motion.span>
       <br class="hidden md:block" />
-      <motion.span client:load {...getHeroTitleAnimation()} className="italic text-coral"> Layanan Pajak. </motion.span>
+      <motion.span
+        client:load
+        {...getHeroTitleAnimation()}
+        className="italic text-coral"
+      >
+        Layanan Pajak.
+      </motion.span>
       <br class="hidden md:block" />
-      <motion.span client:load {...getHeroTitleAnimation()}> Sebuah </motion.span>
-      <motion.span client:load {...getHeroTitleAnimation()}> Solusi. </motion.span>
+      <motion.span client:load {...getHeroTitleAnimation()}>
+        Sebuah
+      </motion.span>
+      <motion.span client:load {...getHeroTitleAnimation()}>
+        Solusi.
+      </motion.span>
       {
         /*
       <motion.span client:load {...getHeroTitleAnimation()}>
@@ -57,13 +71,20 @@ const layanan = [image01, image02, image03]
     </Title>
     <motion.span client:load {...getHeroTitleAnimation()}>
       <Description class="max-w-3xl px-12 text-left md:text-center lg:px-0"
-        >Kami hadir sebagai mitra tepercaya dalam mengelola seluruh aspek perpajakan perusahaan Anda. Dengan pengalaman
-        dan keahlian yang mendalam, kami menyediakan tiga layanan utama yang komprehensif</Description
+        >Kami hadir sebagai mitra tepercaya dalam mengelola seluruh aspek
+        perpajakan perusahaan Anda. Dengan pengalaman dan keahlian yang
+        mendalam, kami menyediakan tiga layanan utama yang komprehensif</Description
       >
     </motion.span>
-    <div class="mt-6 flex w-2/3 flex-col items-center justify-center gap-3 sm:gap-6 md:w-fit md:flex-row">
+    <div
+      class="mt-6 flex w-2/3 flex-col items-center justify-center gap-3 sm:gap-6 md:w-fit md:flex-row"
+    >
       <motion.span client:load {...getHeroTitleAnimation()}>
-        <Button class="w-full" href="/download" isPrimary>
+        <Button
+          class="w-full"
+          href="https://drive.google.com/file/d/1VRpymh_RBTPEnDdvrXmq_-516i07PdCz/view?usp=sharing"
+          isPrimary
+        >
           Konsultasi Sekarang
           <ArrowRight class="size-4" />
         </Button>

@@ -1,12 +1,12 @@
 ---
+import { ArrowRight, Info } from 'lucide-astro'
+import BackButton from '../../components/BackButton.astro'
+import Button from '../../components/Button.astro'
+import Description from '../../components/Description.astro'
+import Title from '../../components/Title.astro'
+import Layout from '../../layouts/Layout.astro'
 // import { getAbsoluteLocaleUrl } from 'astro:i18n'
 import { getAllMods, getAuthorLink, getLocalizedDate } from '../../mods'
-import Layout from '../../layouts/Layout.astro'
-import Title from '../../components/Title.astro'
-import Description from '../../components/Description.astro'
-import Button from '../../components/Button.astro'
-import BackButton from '../../components/BackButton.astro'
-import { ArrowRight, Info } from 'lucide-astro'
 
 export async function getStaticPaths() {
   const mods = await getAllMods()
@@ -40,7 +40,7 @@ const dates = {
           </p>
         </div>
         <Button
-          href="/download"
+          href="https://drive.google.com/file/d/1VRpymh_RBTPEnDdvrXmq_-516i07PdCz/view?usp=sharing"
           class="inline-flex flex-shrink-0 whitespace-nowrap !rounded-lg bg-red-300 dark:bg-red-800"
           isAlert
         >
@@ -53,13 +53,17 @@ const dates = {
         <Title>{mod.name}</Title>
         <Description>{mod.description}</Description>
       </div>
-      <img src={mod.image} alt={mod.name} class="h-full w-full rounded-xl border-2 border-dark object-cover shadow" />
+      <img
+        src={mod.image}
+        alt={mod.name}
+        class="h-full w-full rounded-xl border-2 border-dark object-cover shadow"
+      />
       <div class="flex flex-col justify-between gap-2 sm:flex-row">
         <div class="flex-shrink-0 font-normal">
           <p>
-            Created by <a href={getAuthorLink(mod.author)} class="font-bold">@{mod.author}</a> • <span class="font-bold"
-              >v{mod.version}</span
-            >
+            Created by <a href={getAuthorLink(mod.author)} class="font-bold"
+              >@{mod.author}</a
+            > • <span class="font-bold">v{mod.version}</span>
           </p>
           <p>Creation date • <b>{dates.createdAt}</b></p>
           {
@@ -71,10 +75,20 @@ const dates = {
           }
         </div>
         <div class="flex flex-col sm:items-end">
-          <Button class="hidden" id="install-theme" extra={{ 'zen-theme-id': mod.id }} isPrimary>
+          <Button
+            class="hidden"
+            id="install-theme"
+            extra={{ 'zen-theme-id': mod.id }}
+            isPrimary
+          >
             Install Theme 🎉
           </Button>
-          <Button class="hidden" id="install-theme-uninstall" extra={{ 'zen-theme-id': mod.id }} isPrimary>
+          <Button
+            class="hidden"
+            id="install-theme-uninstall"
+            extra={{ 'zen-theme-id': mod.id }}
+            isPrimary
+          >
             Uninstall Theme
           </Button>
         </div>
