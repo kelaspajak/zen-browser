@@ -18,44 +18,28 @@ const appleIcon = icon({ prefix: 'fab', iconName: 'apple' })
 
 <Layout title="Welcome to Zen">
   <main class="flex min-h-screen flex-col items-center justify-center">
-    <div
-      class="lg:px-auto flex flex-col justify-center px-2 md:px-12 lg:flex-row"
-    >
-      <Image
-        src={myImage}
-        alt="Zen Browser"
-        class="h-24 w-24"
-        loading="eager"
-      />
+    <div class="lg:px-auto flex flex-col justify-center px-2 md:px-12 lg:flex-row">
+      <Image src={myImage} alt="Zen Browser" class="h-24 w-24" loading="eager" />
       <div class="mb-24 flex flex-col gap-6 p-4 lg:w-1/2">
         <div>
           <Title>Try out <span id="zen-name">Zen</span>!</Title>
           <Description>
-            Start browsing the web with Zen Browser today. Beautifully designed,
-            privacy-focused, and packed with features!
+            Start browsing the web with Zen Browser today. Beautifully designed, privacy-focused, and packed with
+            features!
           </Description>
           <Description id="twilight-info" class="mt-6 hidden">
-            <strong>Twilight Mode:</strong> You're currently in Twilight mode, this
-            means you're downloading the latest experimental features and updates.
+            <strong>Twilight Mode:</strong> You're currently in Twilight mode, this means you're downloading the latest experimental
+            features and updates.
           </Description>
         </div>
         <div id="download-form">
           <div id="form-os-select" class="form-item">
-            <div class="form-title">
-              Before downloading, we need to know your system info!
-            </div>
+            <div class="form-title">Before downloading, we need to know your system info!</div>
             <div class="form-description">
-              Please select your operating system below, we already
-              auto-detected it for you!
+              Please select your operating system below, we already auto-detected it for you!
             </div>
             <form class="form-select flex flex-col gap-2" id="os-select">
-              <input
-                type="radio"
-                name="os"
-                value="windows"
-                id="os-select-windows"
-                class="hidden"
-              />
+              <input type="radio" name="os" value="windows" id="os-select-windows" class="hidden" />
               <label
                 class="flex w-full cursor-pointer items-center gap-2 rounded-md border-2 border-dark p-2 px-4"
                 for="os-select-windows"
@@ -63,13 +47,7 @@ const appleIcon = icon({ prefix: 'fab', iconName: 'apple' })
                 <Fragment set:html={windowsIcon.html} />
                 <div>Windows</div>
               </label>
-              <input
-                type="radio"
-                name="os"
-                value="linux"
-                id="os-select-linux"
-                class="hidden"
-              />
+              <input type="radio" name="os" value="linux" id="os-select-linux" class="hidden" />
               <label
                 class="flex w-full cursor-pointer items-center gap-2 rounded-md border-2 border-dark p-2 px-4"
                 for="os-select-linux"
@@ -77,13 +55,7 @@ const appleIcon = icon({ prefix: 'fab', iconName: 'apple' })
                 <Fragment set:html={linuxIcon.html} />
                 <div>Linux</div>
               </label>
-              <input
-                type="radio"
-                name="os"
-                value="macos"
-                id="os-select-macos"
-                class="hidden"
-              />
+              <input type="radio" name="os" value="macos" id="os-select-macos" class="hidden" />
               <label
                 class="flex w-full cursor-pointer items-center gap-2 rounded-md border-2 border-dark p-2 px-4"
                 for="os-select-macos"
@@ -96,8 +68,7 @@ const appleIcon = icon({ prefix: 'fab', iconName: 'apple' })
           <div id="form-macos-download" class="form-item hidden">
             <div class="form-title">Download Zen for MacOS!</div>
             <div class="form-description">
-              You can choose between the Intel or ARM version of Zen Browser,
-              select the one that fits your system.
+              You can choose between the Intel or ARM version of Zen Browser, select the one that fits your system.
             </div>
             <div class="form-select flex flex-col gap-4">
               <div
@@ -119,31 +90,17 @@ const appleIcon = icon({ prefix: 'fab', iconName: 'apple' })
           <div id="linux-target-download" class="form-item hidden">
             <div class="form-title">Choose your Linux target system</div>
             <div class="form-description">
-              We have a few options for Linux, please select the one that fits
-              your system.
+              We have a few options for Linux, please select the one that fits your system.
             </div>
             <form class="form-select flex flex-col gap-2">
-              <input
-                type="radio"
-                name="linux-target"
-                value="x86_64"
-                id="linux-target-x86_64"
-                class="hidden"
-                checked
-              />
+              <input type="radio" name="linux-target" value="x86_64" id="linux-target-x86_64" class="hidden" checked />
               <label
                 class="flex w-full cursor-pointer items-center gap-2 rounded-md border-2 border-dark p-2 px-4"
                 for="linux-target-x86_64"
               >
                 <div>x86_64</div>
               </label>
-              <input
-                type="radio"
-                name="linux-target"
-                value="aarch64"
-                id="linux-target-aarch64"
-                class="hidden"
-              />
+              <input type="radio" name="linux-target" value="aarch64" id="linux-target-aarch64" class="hidden" />
               <label
                 class="flex w-full cursor-pointer items-center gap-2 rounded-md border-2 border-dark p-2 px-4"
                 for="linux-target-aarch64"
@@ -155,8 +112,7 @@ const appleIcon = icon({ prefix: 'fab', iconName: 'apple' })
           <div id="form-linux-download" class="form-item hidden">
             <div class="form-title">Download Zen for Linux!</div>
             <div class="form-description">
-              You can choose between different download formats for Linux,
-              select the one that fits you best.
+              You can choose between different download formats for Linux, select the one that fits you best.
             </div>
             <div class="form-select flex flex-col gap-4">
               <div
@@ -185,8 +141,7 @@ const appleIcon = icon({ prefix: 'fab', iconName: 'apple' })
           <div id="windows-target-download" class="form-item hidden">
             <div class="form-title">Choose your Windows target system</div>
             <div class="form-description">
-              We have a few options for Windows, please select the one that fits
-              your system.
+              We have a few options for Windows, please select the one that fits your system.
             </div>
             <form class="form-select flex flex-col gap-2">
               <input
@@ -203,13 +158,7 @@ const appleIcon = icon({ prefix: 'fab', iconName: 'apple' })
               >
                 <div>x86_64</div>
               </label>
-              <input
-                type="radio"
-                name="windows-target"
-                value="arm64"
-                id="windows-target-arm64"
-                class="hidden"
-              />
+              <input type="radio" name="windows-target" value="arm64" id="windows-target-arm64" class="hidden" />
               <label
                 class="flex w-full cursor-pointer items-center gap-2 rounded-md border-2 border-dark p-2 px-4"
                 for="windows-target-arm64"
@@ -221,8 +170,7 @@ const appleIcon = icon({ prefix: 'fab', iconName: 'apple' })
           <div id="windows-download" class="form-item hidden">
             <div class="form-title">Download Zen for Windows!</div>
             <div class="form-description">
-              You can choose between different download formats for Windows,
-              select the one that fits you best.
+              You can choose between different download formats for Windows, select the one that fits you best.
             </div>
             <div class="form-select flex flex-col gap-4">
               <div
@@ -288,15 +236,13 @@ const appleIcon = icon({ prefix: 'fab', iconName: 'apple' })
     },
   } as any
 
-  const BASE_URL =
-    'https://github.com/zen-browser/desktop/releases/latest/download'
-  const TWILIGHT_BASE_URL =
-    'https://github.com/zen-browser/desktop/releases/download/twilight'
+  const BASE_URL = 'https://github.com/zen-browser/desktop/releases/latest/download'
+  const TWILIGHT_BASE_URL = 'https://github.com/zen-browser/desktop/releases/download/twilight'
 
-  var selectedOS: string | null = null
-  var isTwilight: boolean = false
+  let selectedOS: string | null = null
+  let isTwilight: boolean = false
 
-  var selectedArch: string | null = null
+  let selectedArch: string | null = null
 
   function showButton(buttonId: string, show: boolean) {
     const button = document.getElementById(buttonId) as HTMLButtonElement
@@ -328,61 +274,39 @@ const appleIcon = icon({ prefix: 'fab', iconName: 'apple' })
   function goNextForm() {
     if (selectedOS === null) {
       const osSelect = document.getElementById('os-select') as HTMLFormElement
-      const selectedRadio = osSelect.querySelector(
-        "input[type='radio']:checked",
-      ) as HTMLInputElement
+      const selectedRadio = osSelect.querySelector("input[type='radio']:checked") as HTMLInputElement
       selectedOS = selectedRadio.value
       document.getElementById('form-os-select')?.classList.add('hidden')
 
       if (selectedOS === 'macos') {
-        const macosDownload = document.getElementById(
-          'form-macos-download',
-        ) as HTMLDivElement
+        const macosDownload = document.getElementById('form-macos-download') as HTMLDivElement
         macosDownload.classList.remove('hidden')
         showButton('next-button', false)
       } else if (selectedOS === 'linux') {
-        const linuxDownload = document.getElementById(
-          'linux-target-download',
-        ) as HTMLDivElement
+        const linuxDownload = document.getElementById('linux-target-download') as HTMLDivElement
         linuxDownload.classList.remove('hidden')
       } else if (selectedOS === 'windows') {
-        const windowsDownload = document.getElementById(
-          'windows-target-download',
-        ) as HTMLDivElement
+        const windowsDownload = document.getElementById('windows-target-download') as HTMLDivElement
         windowsDownload.classList.remove('hidden')
       }
       showButton('back-button', true) // Show Back button after first step
     } else if (selectedOS === 'linux' && selectedArch === null) {
-      const linuxTargetSelect = document.getElementById(
-        'linux-target-download',
-      ) as HTMLFormElement
-      const selectedRadio = linuxTargetSelect.querySelector(
-        "input[type='radio']:checked",
-      ) as HTMLInputElement
+      const linuxTargetSelect = document.getElementById('linux-target-download') as HTMLFormElement
+      const selectedRadio = linuxTargetSelect.querySelector("input[type='radio']:checked") as HTMLInputElement
       selectedArch = selectedRadio.value
       document.getElementById('linux-target-download')?.classList.add('hidden')
 
-      const linuxDownload = document.getElementById(
-        'form-linux-download',
-      ) as HTMLDivElement
+      const linuxDownload = document.getElementById('form-linux-download') as HTMLDivElement
       linuxDownload.classList.remove('hidden')
 
       showButton('next-button', false)
     } else if (selectedOS === 'windows' && selectedArch === null) {
-      const windowsTargetSelect = document.getElementById(
-        'windows-target-download',
-      ) as HTMLFormElement
-      const selectedRadio = windowsTargetSelect.querySelector(
-        "input[type='radio']:checked",
-      ) as HTMLInputElement
+      const windowsTargetSelect = document.getElementById('windows-target-download') as HTMLFormElement
+      const selectedRadio = windowsTargetSelect.querySelector("input[type='radio']:checked") as HTMLInputElement
       selectedArch = selectedRadio.value
-      document
-        .getElementById('windows-target-download')
-        ?.classList.add('hidden')
+      document.getElementById('windows-target-download')?.classList.add('hidden')
 
-      const windowsDownload = document.getElementById(
-        'windows-download',
-      ) as HTMLDivElement
+      const windowsDownload = document.getElementById('windows-download') as HTMLDivElement
       windowsDownload.classList.remove('hidden')
 
       showButton('next-button', false)
@@ -396,14 +320,10 @@ const appleIcon = icon({ prefix: 'fab', iconName: 'apple' })
       // Go back to architecture selection
       if (selectedOS === 'linux') {
         document.getElementById('form-linux-download')?.classList.add('hidden')
-        document
-          .getElementById('linux-target-download')
-          ?.classList.remove('hidden')
+        document.getElementById('linux-target-download')?.classList.remove('hidden')
       } else if (selectedOS === 'windows') {
         document.getElementById('windows-download')?.classList.add('hidden')
-        document
-          .getElementById('windows-target-download')
-          ?.classList.remove('hidden')
+        document.getElementById('windows-target-download')?.classList.remove('hidden')
       }
       selectedArch = null
       showButton('back-button', true)
@@ -413,13 +333,9 @@ const appleIcon = icon({ prefix: 'fab', iconName: 'apple' })
       if (selectedOS === 'macos') {
         document.getElementById('form-macos-download')?.classList.add('hidden')
       } else if (selectedOS === 'linux') {
-        document
-          .getElementById('linux-target-download')
-          ?.classList.add('hidden')
+        document.getElementById('linux-target-download')?.classList.add('hidden')
       } else if (selectedOS === 'windows') {
-        document
-          .getElementById('windows-target-download')
-          ?.classList.add('hidden')
+        document.getElementById('windows-target-download')?.classList.add('hidden')
       }
       document.getElementById('form-os-select')?.classList.remove('hidden')
       selectedOS = null
@@ -433,15 +349,9 @@ const appleIcon = icon({ prefix: 'fab', iconName: 'apple' })
 
   function filloutDefaultOS() {
     const osSelect = document.getElementById('os-select') as HTMLFormElement
-    const osSelectWindows = document.getElementById(
-      'os-select-windows',
-    ) as HTMLInputElement
-    const osSelectLinux = document.getElementById(
-      'os-select-linux',
-    ) as HTMLInputElement
-    const osSelectMacOS = document.getElementById(
-      'os-select-macos',
-    ) as HTMLInputElement
+    const osSelectWindows = document.getElementById('os-select-windows') as HTMLInputElement
+    const osSelectLinux = document.getElementById('os-select-linux') as HTMLInputElement
+    const osSelectMacOS = document.getElementById('os-select-macos') as HTMLInputElement
 
     if (navigator.platform.includes('Win')) {
       osSelectWindows.checked = true
@@ -459,8 +369,10 @@ const appleIcon = icon({ prefix: 'fab', iconName: 'apple' })
       console.log('Twilight mode enabled')
       const name = document.getElementById('zen-name')
       const twilightInfo = document.getElementById('twilight-info')
-      if (name) name.innerHTML = 'Twilight'
-      if (twilightInfo) twilightInfo.classList.remove('hidden')
+      if (name) 
+name.innerHTML = 'Twilight'
+      if (twilightInfo) 
+twilightInfo.classList.remove('hidden')
     }
   }
 
@@ -474,47 +386,33 @@ const appleIcon = icon({ prefix: 'fab', iconName: 'apple' })
     goPreviousForm()
   })
 
-  document
-    .getElementById('macos-arm-download')
-    ?.addEventListener('click', () => {
-      downloadRelease('macos', 'arm')
-    })
+  document.getElementById('macos-arm-download')?.addEventListener('click', () => {
+    downloadRelease('macos', 'arm')
+  })
 
-  document
-    .getElementById('macos-intel-download')
-    ?.addEventListener('click', () => {
-      downloadRelease('macos', 'intel')
-    })
+  document.getElementById('macos-intel-download')?.addEventListener('click', () => {
+    downloadRelease('macos', 'intel')
+  })
 
-  document
-    .getElementById('linux-tar-download')
-    ?.addEventListener('click', () => {
-      downloadRelease('linux', selectedArch as string, 'tar')
-    })
+  document.getElementById('linux-tar-download')?.addEventListener('click', () => {
+    downloadRelease('linux', selectedArch as string, 'tar')
+  })
 
-  document
-    .getElementById('linux-appimage-download')
-    ?.addEventListener('click', () => {
-      downloadRelease('linux', selectedArch as string, 'appImage')
-    })
+  document.getElementById('linux-appimage-download')?.addEventListener('click', () => {
+    downloadRelease('linux', selectedArch as string, 'appImage')
+  })
 
-  document
-    .getElementById('linux-flathub-download')
-    ?.addEventListener('click', () => {
-      window.open('https://flathub.org/apps/io.github.zen_browser.zen')
-    })
+  document.getElementById('linux-flathub-download')?.addEventListener('click', () => {
+    window.open('https://flathub.org/apps/io.github.zen_browser.zen')
+  })
 
-  document
-    .getElementById('windows-installer-download')
-    ?.addEventListener('click', () => {
-      downloadRelease('windows', selectedArch as string, 'installer')
-    })
+  document.getElementById('windows-installer-download')?.addEventListener('click', () => {
+    downloadRelease('windows', selectedArch as string, 'installer')
+  })
 
-  document
-    .getElementById('windows-zip-download')
-    ?.addEventListener('click', () => {
-      //downloadRelease("windows", selectedArch as string, "zip");
-    })
+  document.getElementById('windows-zip-download')?.addEventListener('click', () => {
+    // downloadRelease("windows", selectedArch as string, "zip");
+  })
 
   filloutDefaultOS()
 </script>

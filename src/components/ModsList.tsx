@@ -1,7 +1,7 @@
-import React, { useState, useMemo } from 'react'
 import type { ZenTheme } from '../mods'
-import { library, icon } from '@fortawesome/fontawesome-svg-core'
-import { faSort, faSortUp, faSortDown } from '@fortawesome/free-solid-svg-icons'
+import { icon, library } from '@fortawesome/fontawesome-svg-core'
+import { faSort, faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons'
+import React, { useMemo, useState } from 'react'
 
 // Add icons to the library
 library.add(faSort, faSortUp, faSortDown)
@@ -26,23 +26,29 @@ export default function ModsList({ mods }: ModsListProps) {
 
   const toggleCreatedSort = () => {
     setCreatedSort((prev) => {
-      if (prev === 'default') return 'asc'
-      if (prev === 'asc') return 'desc'
+      if (prev === 'default')
+        return 'asc'
+      if (prev === 'asc')
+        return 'desc'
       return 'default'
     })
   }
 
   const toggleUpdatedSort = () => {
     setUpdatedSort((prev) => {
-      if (prev === 'default') return 'asc'
-      if (prev === 'asc') return 'desc'
+      if (prev === 'default')
+        return 'asc'
+      if (prev === 'asc')
+        return 'desc'
       return 'default'
     })
   }
 
   function getSortIcon(state: 'default' | 'asc' | 'desc') {
-    if (state === 'asc') return ascSortIcon
-    if (state === 'desc') return descSortIcon
+    if (state === 'asc')
+      return ascSortIcon
+    if (state === 'desc')
+      return descSortIcon
     return defaultSortIcon
   }
 
@@ -53,20 +59,20 @@ export default function ModsList({ mods }: ModsListProps) {
     const searchTerm = search.toLowerCase()
     if (searchTerm) {
       filtered = filtered.filter(
-        (mod) =>
-          mod.name.toLowerCase().includes(searchTerm) ||
-          mod.description.toLowerCase().includes(searchTerm) ||
-          mod.author.toLowerCase().includes(searchTerm) ||
-          (mod.tags?.some((tag) => tag.toLowerCase().includes(searchTerm)) ??
-            false),
+        mod =>
+          mod.name.toLowerCase().includes(searchTerm)
+          || mod.description.toLowerCase().includes(searchTerm)
+          || mod.author.toLowerCase().includes(searchTerm)
+          || (mod.tags?.some(tag => tag.toLowerCase().includes(searchTerm))
+            ?? false),
       )
     }
 
     // Sort by createdAt if chosen
     if (createdSort !== 'default') {
       filtered.sort((a, b) => {
-        const diff =
-          new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
+        const diff
+          = new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
         return createdSort === 'asc' ? diff : -diff
       })
     }
@@ -74,8 +80,8 @@ export default function ModsList({ mods }: ModsListProps) {
     // Sort by updatedAt if chosen
     if (updatedSort !== 'default') {
       filtered.sort((a, b) => {
-        const diff =
-          new Date(a.updatedAt).getTime() - new Date(b.updatedAt).getTime()
+        const diff
+          = new Date(a.updatedAt).getTime() - new Date(b.updatedAt).getTime()
         return updatedSort === 'asc' ? diff : -diff
       })
     }
@@ -93,7 +99,7 @@ export default function ModsList({ mods }: ModsListProps) {
             className="w-full rounded-full border-2 border-dark bg-transparent px-6 py-2 text-lg outline-none"
             placeholder="Type to search..."
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={e => setSearch(e.target.value)}
           />
         </div>
 
@@ -131,7 +137,7 @@ export default function ModsList({ mods }: ModsListProps) {
       </div>
 
       <div className="mx-auto grid grid-cols-1 gap-12 p-10 md:grid-cols-2 lg:grid-cols-3 lg:p-24 lg:px-24">
-        {filteredAndSortedMods.map((mod) => (
+        {filteredAndSortedMods.map(mod => (
           <a
             key={mod.id}
             href={`/mods/${mod.id}`}
@@ -146,9 +152,11 @@ export default function ModsList({ mods }: ModsListProps) {
             </div>
             <div>
               <h2 className="text-lg font-bold">
-                {mod.name}{' '}
+                {mod.name}
+                {' '}
                 <span className="ml-1 text-sm font-normal">
-                  by @{mod.author}
+                  by @
+                  {mod.author}
                 </span>
               </h2>
               <p className="text-sm font-thin">{mod.description}</p>

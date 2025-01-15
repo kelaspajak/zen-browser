@@ -5,6 +5,8 @@ interface Props {
 
 const { title } = Astro.props
 import '@fontsource/bricolage-grotesque/400.css'
+// Supports weights 100-900
+import '@fontsource-variable/inter'
 import Footer from '../components/Footer.astro'
 import NavBar from '../components/NavBar.astro'
 ---
@@ -49,11 +51,11 @@ import NavBar from '../components/NavBar.astro'
     <!-- twitter card -->
     <meta name="twitter:card" content="summary_large_image" />
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <!-- <link rel="preconnect" href="https://fonts.bunny.net" />
     <link
       href="https://fonts.bunny.net/css?family=bricolage-grotesque:200,300,400,500,600,700,800|instrument-serif:400,400i"
       rel="stylesheet"
-    />
+    /> -->
     <!-- RSS Feed -->
     <link
       rel="alternate"
@@ -62,9 +64,7 @@ import NavBar from '../components/NavBar.astro'
       href={`${Astro.url.origin}/feed.xml`}
     />
   </head>
-  <body
-    class="overflow-x-hidden bg-paper font-['bricolage-grotesque'] text-dark"
-  >
+  <body class="overflow-x-hidden bg-paper font-['Inter_Variable'] text-dark">
     <NavBar />
     <slot />
     <Footer />
@@ -110,7 +110,7 @@ import NavBar from '../components/NavBar.astro'
 
   body,
   body > * {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Inter Variable', sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
     font-weight: 500;

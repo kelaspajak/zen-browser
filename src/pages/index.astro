@@ -7,7 +7,6 @@ import Hero from '../components/hero-one.astro'
 import Layout from '../layouts/Layout.astro'
 import SptTahunan from '../components/SptTahunan.astro'
 
-
 import { ArrowRight } from 'lucide-astro'
 import image01 from '/public/gambar-spt/gambar01.jpg'
 import image02 from '/public/gambar-spt/gambar02.jpg'
@@ -49,17 +48,16 @@ const layanan = [
     deskripsi:
       'informasi terbaru seputar peraturan pajak, deadline penting, dan tips praktis untuk membantu Anda tetap patuh dan optimal dalam memenuhi kewajiban pajak.',
     fitur: [
-    'Update peraturan pajak terbaru dan dampaknya bagi wajib pajak',
-'Deadline penting terkait pelaporan dan pembayaran pajak',
-'Tips praktis kepatuhan pajak dan optimalisasi ',
+      'Update peraturan pajak terbaru dan dampaknya bagi wajib pajak',
+      'Deadline penting terkait pelaporan dan pembayaran pajak',
+      'Tips praktis kepatuhan pajak dan optimalisasi ',
     ],
     gambar: [image08, image09, image10],
   },
 ]
 ---
 
-<Layout title="About - Less Summer">
+<Layout title="SPT Tahunan - Less Summer">
   <Hero />
   <SptTahunan />
-  
 </Layout>

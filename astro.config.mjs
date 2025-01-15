@@ -1,10 +1,10 @@
-// @ts-check
-import { defineConfig } from 'astro/config'
+import react from '@astrojs/react'
+import sitemap from '@astrojs/sitemap'
+
 import tailwind from '@astrojs/tailwind'
 
-import react from '@astrojs/react'
-
-import sitemap from '@astrojs/sitemap'
+// @ts-check
+import { defineConfig } from 'astro/config'
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,7 +12,7 @@ export default defineConfig({
     tailwind(),
     react(),
     sitemap({
-      filter: (page) => !page.includes('mods/'),
+      filter: page => !page.includes('mods/'),
     }),
   ],
   site: 'https://zen-browser.app',

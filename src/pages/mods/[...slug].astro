@@ -53,17 +53,13 @@ const dates = {
         <Title>{mod.name}</Title>
         <Description>{mod.description}</Description>
       </div>
-      <img
-        src={mod.image}
-        alt={mod.name}
-        class="h-full w-full rounded-xl border-2 border-dark object-cover shadow"
-      />
+      <img src={mod.image} alt={mod.name} class="h-full w-full rounded-xl border-2 border-dark object-cover shadow" />
       <div class="flex flex-col justify-between gap-2 sm:flex-row">
         <div class="flex-shrink-0 font-normal">
           <p>
-            Created by <a href={getAuthorLink(mod.author)} class="font-bold"
-              >@{mod.author}</a
-            > • <span class="font-bold">v{mod.version}</span>
+            Created by <a href={getAuthorLink(mod.author)} class="font-bold">@{mod.author}</a> • <span class="font-bold"
+              >v{mod.version}</span
+            >
           </p>
           <p>Creation date • <b>{dates.createdAt}</b></p>
           {
@@ -75,25 +71,15 @@ const dates = {
           }
         </div>
         <div class="flex flex-col sm:items-end">
-          <Button
-            class="hidden"
-            id="install-theme"
-            extra={{ 'zen-theme-id': mod.id }}
-            isPrimary
-          >
+          <Button class="hidden" id="install-theme" extra={{ 'zen-theme-id': mod.id }} isPrimary>
             Install Theme 🎉
           </Button>
-          <Button
-            class="hidden"
-            id="install-theme-uninstall"
-            extra={{ 'zen-theme-id': mod.id }}
-            isPrimary
-          >
+          <Button class="hidden" id="install-theme-uninstall" extra={{ 'zen-theme-id': mod.id }} isPrimary>
             Uninstall Theme
           </Button>
         </div>
       </div>
-      <!-- TODO: Readme markdown 
+      <!-- TODO: Readme markdown
       <div class="h-[1px] opacity-80 bg-dark w-full"></div>
       -->
     </div>

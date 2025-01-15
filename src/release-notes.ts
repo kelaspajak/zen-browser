@@ -7,7 +7,7 @@ interface FixWithIssue {
 
 type Fix = string | FixWithIssue
 
-export type BreakingChange = string | { description: string; link: string }
+export type BreakingChange = string | { description: string, link: string }
 
 export interface ReleaseNote {
   version: string

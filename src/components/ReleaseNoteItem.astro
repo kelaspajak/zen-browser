@@ -13,29 +13,17 @@ if (props.date) {
 }
 ---
 
-<section
-  class="release-note-item relative mt-24 flex flex-col border-t pt-24 lg:flex-row"
-  id={props.version}
->
+<section class="release-note-item relative mt-24 flex flex-col border-t pt-24 lg:flex-row" id={props.version}>
   <div class="px-5 md:px-10 md:pr-32">
     {
       isTwilight ? (
-        <a
-          class="!mb-2 block w-fit rounded-full bg-coral px-3 py-1 text-xs text-paper"
-          href="/download?twilight"
-        >
+        <a class="!mb-2 block w-fit rounded-full bg-coral px-3 py-1 text-xs text-paper" href="/download?twilight">
           Twilight
         </a>
       ) : null
     }
     <h1 class="text-3xl font-bold">
-      {
-        isTwilight ? (
-          <>Twilight changes for {props.version} 🌙</>
-        ) : (
-          <>Release notes for {props.version} 🎉</>
-        )
-      }
+      {isTwilight ? <>Twilight changes for {props.version} 🌙</> : <>Release notes for {props.version} 🎉</>}
     </h1>
     {date && date.toLocaleDateString('en-US', { dateStyle: 'long' })}
     <div class="mt-2">
@@ -68,8 +56,8 @@ if (props.date) {
         {
           isTwilight ? (
             <>
-              Please note that Twilight is a pre-release version of Zen Browser.
-              It may contain bugs and unfinished features.
+              Please note that Twilight is a pre-release version of Zen Browser. It may contain bugs and unfinished
+              features.
             </>
           ) : null
         }
@@ -197,10 +185,7 @@ if (props.date) {
     .ac-accordion {
       &.ac-accordion--light {
         > * + * {
-          border-color: light-dark(
-            rgba(0, 0, 0, 0.1),
-            rgba(255, 255, 255, 0.1)
-          ) !important;
+          border-color: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1)) !important;
           width: 100%;
         }
       }

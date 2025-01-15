@@ -24,9 +24,10 @@ export async function getAllMods(): Promise<ZenTheme[]> {
     const res = await fetch(THEME_API)
     const json = await res.json()
     // convert dict to array
-    const mods = Object.keys(json).map((key) => json[key])
+    const mods = Object.keys(json).map(key => json[key])
     return mods
-  } catch (error) {
+  }
+  catch (error) {
     console.error(error)
     return []
   }

@@ -14,10 +14,7 @@ import { motion } from 'motion/react'
 import { getTitleAnimation, getZoomInAnimation } from '../animations'
 ---
 
-<section
-  id="features"
-  class="relative flex w-full flex-col px-4 py-36 lg:px-12 xl:px-24"
->
+<section id="features" class="relative flex w-full flex-col px-4 py-36 lg:px-12 xl:px-24">
   <div class="flex w-full flex-col items-start gap-12 lg:flex-row">
     <div id="feature-list" class="flex flex-col gap-4 lg:w-1/3">
       <motion.span client:load {...getTitleAnimation(0.2)}>
@@ -30,12 +27,9 @@ import { getTitleAnimation, getZoomInAnimation } from '../animations'
         className="feature flex w-full cursor-pointer rounded-xl p-4 hover:bg-coral/5"
       >
         <div class="flex flex-col">
-          <Description class="feature-title text-2xl font-bold">
-            Workspaces
-          </Description>
+          <Description class="feature-title text-2xl font-bold"> Workspaces </Description>
           <p class="desc mt-2 text-base font-normal">
-            With Zen, you can create multiple workspaces to keep your tabs
-            organized.
+            With Zen, you can create multiple workspaces to keep your tabs organized.
           </p>
         </div>
       </motion.div>
@@ -46,9 +40,7 @@ import { getTitleAnimation, getZoomInAnimation } from '../animations'
         className="feature flex w-full cursor-pointer rounded-xl p-4 hover:bg-coral/5"
       >
         <div class="flex flex-col">
-          <Description class="feature-title text-2xl font-bold">
-            Compact Mode
-          </Description>
+          <Description class="feature-title text-2xl font-bold"> Compact Mode </Description>
           <p class="desc mt-2 text-base font-normal">
             Zen's compact mode allows you to see more of your content at once.
           </p>
@@ -61,9 +53,7 @@ import { getTitleAnimation, getZoomInAnimation } from '../animations'
         className="feature flex w-full cursor-pointer rounded-xl p-4 hover:bg-coral/5"
       >
         <div class="flex flex-col">
-          <Description class="feature-title text-2xl font-bold">
-            Split Views
-          </Description>
+          <Description class="feature-title text-2xl font-bold"> Split Views </Description>
           <p class="desc mt-2 text-base font-normal">
             Split your browser into multiple views to see more content at once.
           </p>
@@ -76,9 +66,7 @@ import { getTitleAnimation, getZoomInAnimation } from '../animations'
         className="feature flex w-full cursor-pointer rounded-xl p-4 hover:bg-coral/5"
       >
         <div class="flex flex-col">
-          <Description class="feature-title text-2xl font-bold">
-            Sidebar
-          </Description>
+          <Description class="feature-title text-2xl font-bold"> Sidebar </Description>
           <p class="desc mt-2 text-base font-normal">
             Zen's sidebar allows you to quickly access your favourite websites.
           </p>
@@ -91,77 +79,51 @@ import { getTitleAnimation, getZoomInAnimation } from '../animations'
         className="feature flex w-full cursor-pointer rounded-xl p-4 hover:bg-coral/5"
       >
         <div class="flex flex-col">
-          <Description class="feature-title text-2xl font-bold">
-            Zen Glance
-          </Description>
+          <Description class="feature-title text-2xl font-bold"> Zen Glance </Description>
           <p class="desc mt-2 text-base font-normal">
-            Preview your tabs with Zen Glance to quickly find what you're
-            looking for, without switching tabs.
+            Preview your tabs with Zen Glance to quickly find what you're looking for, without switching tabs.
           </p>
         </div>
       </motion.div>
     </div>
     <div class="relative m-auto items-center lg:w-2/3 lg:pl-20">
       <div class="ml-auto" id="feature-list-image">
-        <Image
-          src={browserWorkspaces}
-          alt="Browser Workspaces"
-          class="rounded-xl border-4 border-white shadow"
-        />
-        <Image
-          src={browserCompactMode}
-          alt="Browser Compact Mode"
-          class="rounded-xl border-4 border-white shadow"
-        />
-        <Image
-          src={browserSplitViews}
-          alt="Browser Split Views"
-          class="rounded-xl border-4 border-white shadow"
-        />
-        <Image
-          src={browserSidebar}
-          alt="Browser Sidebar"
-          class="rounded-xl border-4 border-white shadow"
-        />
+        <Image src={browserWorkspaces} alt="Browser Workspaces" class="rounded-xl border-4 border-white shadow" />
+        <Image src={browserCompactMode} alt="Browser Compact Mode" class="rounded-xl border-4 border-white shadow" />
+        <Image src={browserSplitViews} alt="Browser Split Views" class="rounded-xl border-4 border-white shadow" />
+        <Image src={browserSidebar} alt="Browser Sidebar" class="rounded-xl border-4 border-white shadow" />
         <video
           src={browserGlance}
           autoplay
           loop
           muted
           playsinline
-          class="absolute left-0 top-0 h-full w-full rounded-xl border-4 border-white object-cover shadow"
-        ></video>
+          class="absolute left-0 top-0 h-full w-full rounded-xl border-4 border-white object-cover shadow"></video>
       </div>
     </div>
   </div>
 </section>
 <script>
   function changeFeature(index: number) {
-    document
-      .querySelectorAll('#feature-list .feature')
-      .forEach((feature: any, i) => {
-        if (i === index) {
-          feature.setAttribute('active', '')
-        } else {
-          feature.removeAttribute('active')
-        }
-      })
-    document
-      .querySelectorAll('#feature-list-image > *')
-      .forEach((img: any, i) => {
-        img.style.opacity = i === index ? 1 : 0
-        img.classList.toggle('absolute', i !== index)
-        img.classList.toggle('hidden', i !== index)
-      })
+    document.querySelectorAll('#feature-list .feature').forEach((feature: any, i) => {
+      if (i === index) {
+        feature.setAttribute('active', '')
+      } else {
+        feature.removeAttribute('active')
+      }
+    })
+    document.querySelectorAll('#feature-list-image > *').forEach((img: any, i) => {
+      img.style.opacity = i === index ? 1 : 0
+      img.classList.toggle('absolute', i !== index)
+      img.classList.toggle('hidden', i !== index)
+    })
   }
 
-  document
-    .querySelectorAll('#feature-list .feature')
-    .forEach((feature: any, i) => {
-      feature.addEventListener('click', () => {
-        changeFeature(i)
-      })
+  document.querySelectorAll('#feature-list .feature').forEach((feature: any, i) => {
+    feature.addEventListener('click', () => {
+      changeFeature(i)
     })
+  })
   changeFeature(0)
 </script>
 <style>

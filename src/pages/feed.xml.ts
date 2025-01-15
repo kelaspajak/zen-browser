@@ -1,6 +1,6 @@
+import type { ReleaseNote } from '../release-notes'
 import rss, { type RSSOptions } from '@astrojs/rss'
 import { releaseNotes } from '../release-notes'
-import type { ReleaseNote } from '../release-notes'
 
 /** The default number of entries to include in the RSS feed. */
 const RSS_ENTRY_LIMIT = 20
@@ -11,8 +11,8 @@ const RSS_ENTRY_LIMIT = 20
  */
 export function GET(context: any) {
   // Just in case the release notes array is empty for whatever reason.
-  const latestDate =
-    releaseNotes.length > 0
+  const latestDate
+    = releaseNotes.length > 0
       ? formatRssDate(releaseNotes[0].date as string)
       : new Date()
 
@@ -144,9 +144,9 @@ function breakingChangeToReleaseNote(
   }
 
   if (
-    !breakingChange ||
-    !breakingChange.description ||
-    breakingChange.description.length === 0
+    !breakingChange
+    || !breakingChange.description
+    || breakingChange.description.length === 0
   ) {
     return ''
   }
@@ -159,9 +159,9 @@ function pubDate(date?: Date) {
 
   const pieces = date.toString().split(' ')
   const offsetTime = pieces[5].match(/[-+]\d{4}/)
-  const offset = offsetTime ? offsetTime : pieces[5]
+  const offset = offsetTime || pieces[5]
   const parts = [
-    pieces[0] + ',',
+    `${pieces[0]},`,
     pieces[2],
     pieces[1],
     pieces[3],
